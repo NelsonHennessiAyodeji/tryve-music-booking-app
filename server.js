@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   try {
     connectDatabse(process.env.MONGO_URI);
-    console.log(`Server is listening on port ${port}`);
+    console.log(`Server is online and listening on port ${port}`);
   } catch (error) {
     throw new Error(error.message);
   }
