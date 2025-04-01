@@ -6,9 +6,9 @@ const connectDatabse = require("./database/database");
 const port = process.env.PORT || 3000;
 
 // Start method, if the databse has any faults the application WILL not run!
-app.listen(port, () => {
+app.listen(port, async () => {
   try {
-    connectDatabse(process.env.MONGO_URI);
+    await connectDatabse(process.env.MONGO_URI);
     console.log(`Server is online and listening on port ${port}`);
   } catch (error) {
     throw new Error(error.message);
