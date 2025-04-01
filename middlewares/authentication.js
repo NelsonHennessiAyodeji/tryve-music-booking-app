@@ -2,7 +2,7 @@ const { UnauthenticatedError } = require("../errors");
 const { verifyToken } = require("../utilities");
 
 // This middleware funtion checks for a cookie to know if the artist has been aithenticated or not
-const authenticateArtist = (req, res, next) => {
+const authenticateRouter = (req, res, next) => {
   const { token } = req.signedCookies;
 
   if (!token) {
@@ -16,4 +16,4 @@ const authenticateArtist = (req, res, next) => {
   next();
 };
 
-module.exports = authenticateArtist;
+module.exports = authenticateRouter;
