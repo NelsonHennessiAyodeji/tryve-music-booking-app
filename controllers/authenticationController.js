@@ -92,7 +92,7 @@ const login = async (req, res) => {
     artistID: artist._id,
   };
 
-  console.log(req.signedCookies);
+  console.log(req);
 
   // Attaching the important elements to make up the unique cookie
   attachCookiesToResponse(res, artistToken);
