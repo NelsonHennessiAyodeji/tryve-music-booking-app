@@ -43,6 +43,8 @@ const register = async (req, res) => {
     artistID: artist._id,
   };
 
+  const token = createToken({ payload: artistToken }); // this is only here to expose it on the API Doc, it is not meant to be here
+
   // Attaching the important elements to make up the unique cookie
   attachCookiesToResponse(res, artistToken);
 
@@ -52,6 +54,7 @@ const register = async (req, res) => {
     Artist: {
       artistName: artist.name,
       artistEmail: artist.email,
+      artistToken: token,
     },
   });
 };
@@ -89,7 +92,7 @@ const login = async (req, res) => {
     artistID: artist._id,
   };
 
-  const token = createToken({ payload: artist }); // this is only here to expose it on the API Doc, it is not meant to be here
+  console.log(req.signedCookies);
 
   // Attaching the important elements to make up the unique cookie
   attachCookiesToResponse(res, artistToken);
@@ -100,7 +103,7 @@ const login = async (req, res) => {
     Artist: {
       artistName: artist.name,
       artistEmail: artist.email,
-      artistToken: token,
+      artistToken: req.signedCookies,
     },
   });
 };
