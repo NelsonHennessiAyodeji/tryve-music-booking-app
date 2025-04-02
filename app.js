@@ -14,7 +14,7 @@ const compression = require("compression");
 const cookieParser = require("cookie-parser");
 
 // Router Imports
-const baseUrl = "/api/v1/";
+const baseUrl = "/api/v1";
 const authenticationRouter = require("./routers/authenticationRouter");
 const artistRouter = require("./routers/artistRouter");
 const eventRouter = require("./routers/eventRouter");
@@ -48,10 +48,10 @@ app.use(
 );
 
 // Server routers
-app.use(`/${baseUrl}/auth`, authenticationRouter);
-app.use(`/${baseUrl}/artists`, artistRouter);
-app.use(`/${baseUrl}/events`, eventRouter);
-app.use(`/${baseUrl}/bookings`, bookingRouter);
+app.use(`${baseUrl}/auth`, authenticationRouter);
+app.use(`${baseUrl}/artists`, artistRouter);
+app.use(`${baseUrl}/events`, eventRouter);
+app.use(`${baseUrl}/bookings`, bookingRouter);
 
 // Server error handing implementations
 app.use(notFoundError);
