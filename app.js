@@ -1,6 +1,7 @@
 // Server Runner imports
 const express = require("express");
 const app = express();
+const path = require("path");
 
 // Server security and performance imports
 const rateLimit = require("express-rate-limit");
@@ -34,7 +35,7 @@ app.use(cors());
 // Server internal middleware
 app.use(cookieParser(process.env.JWT_SECRET));
 app.use(express.json({ limit: "100kb" }));
-// app.use(express.static())
+app.use(express.static("public/documentation"));
 
 // Server rate limiter
 app.use(
