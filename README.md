@@ -16,9 +16,10 @@ The Node.js Music Event Booking System API is a robust and comprehensive solutio
 
 ## Postman Collection
 
-You can test the API using the [Postman collection](https://web.postman.co/workspace/f6bbb5cb-2162-4421-bd98-14bab5687434/documentation/26144957-f450601f-1eda-464e-a75d-cb72e69d2777) provided.
+You can test the API using the [Postman collection](https://documenter.getpostman.com/view/26144957/2sB2cREQnb) provided.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://web.postman.co/workspace/f6bbb5cb-2162-4421-bd98-14bab5687434/documentation/26144957-f450601f-1eda-464e-a75d-cb72e69d2777)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/26144957/2sB2cREQnb)
+
 
 ## Features
 
