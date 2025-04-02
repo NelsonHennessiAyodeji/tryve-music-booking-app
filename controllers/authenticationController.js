@@ -7,6 +7,7 @@ const {
 } = require("../errors");
 const { attachCookiesToResponse } = require("../utilities");
 const { StatusCodes } = require("http-status-codes");
+const { createToken } = require("../utilities/jwt");
 
 const register = async (req, res) => {
   const { name, email, password, genre, bio, pricing, availability } = req.body;
@@ -88,7 +89,7 @@ const login = async (req, res) => {
     artistID: artist._id,
   };
 
-  const token = req.signedCookies;
+  const token = createToken({ payload: artist }); // this is only here to expose it on the API Doc, it is not meant to be here
 
   // Attaching the important elements to make up the unique cookie
   attachCookiesToResponse(res, artistToken);
