@@ -71,273 +71,67 @@ Once the server is running, interact with the API using tools like [Postman](htt
 
 ## API Endpoints
 
-## Admin Routes
+## Artist Routes
 
-- `POST /api/v1/admins/signup`
+- `GET /api/v1/artists`
 
-  - Sign up as an admin.
+  - Get all artists.
 
-- `POST /api/v1/admins/login`
+- `GET /api/v1/artists/:id`
 
-  - Log in as an admin.
+  - Get artist by ID.
 
-- `GET /api/v1/admins`
+- `PUT /api/v1/artists/:id`
+  - Update artist by ID.
 
-  - Get all admins. (Admin Only)
+- `PATCH /api/v1/artists/updateArtist`
+  - Update artist's password.
 
-- `GET /api/v1/admins/:id`
+## Event Routes
 
-  - Get admin profile by ID. (Admin Only)
+- `POST /api/v1/events/:id`
 
-- `PATCH /api/v1/admins/updateAdmin`
+  - Create an event.
 
-  - Update admin data. (Admin Only)
+- `GET /api/v1/events`
 
-- `PATCH /api/v1/admins/updateMyPassword`
-  - Update admin password. (Admin Only)
+  - Get all events.
 
-## Teacher Routes
+- `GET /api/v1/events/:id`
 
-- `POST /api/v1/teachers/login`
+  - Get event by ID.
 
-  - Log in as a teacher.
+- `PATCH /api/v1/events/:id`
 
-- `PATCH /api/v1/teachers/updateMyPassword`
+  - Update event by ID.
 
-  - Update teacher password. (Teacher Only)
+- `DELETE /api/v1/events/:id`
+  - Delete event by ID.
 
-- `GET /api/v1/teachers/profile`
+## Booking Routes
 
-  - Get teacher profile. (Teacher Only)
+- `POST /api/v1/bookings`
 
-- `PATCH /api/v1/teachers/:teacherId/update`
+  - Create a booking. (Admin Only)
 
-  - Update teacher data. (Teacher Only)
+- `GET /api/v1/bookings`
 
-- `POST /api/v1/teachers/signup-teacher`
+  - Get all booking history. (Admin Only)
 
-  - Sign up a new teacher. (Admin Only)
+- `GET /api/v1/bookings/:id`
 
-- `GET /api/v1/teachers`
+  - Get a booking by ID.
 
-  - Get all teachers. (Admin Only)
+- `PATCH /api/v1/bookings/:id`
 
-- `GET /api/v1/teachers/:teacherId`
+  - Update booking by ID. (Admin Only)
 
-  - Get teacher by ID. (Admin Only)
-
-- `PATCH /api/v1/teachers/:teacherId/update/admin`
-  - Admin update teacher. (Admin Only)
-
-## Student Routes
-
-- `PATCH /api/v1/students/updateMyPassword`
-
-  - Update student password. (Student Only)
-
-- `GET /api/v1/students/profile`
-
-  - Get student profile. (Student Only)
-
-- `PATCH /api/v1/students/:studentId/update`
-
-  - Update student data. (Student Only)
-
-- `POST /api/v1/students/exam/:examId/write`
-
-  - Write an exam. (Student Only)
-
-- `POST /api/v1/students/signup-student`
-
-  - Sign up a new student. (Admin Only)
-
-- `GET /api/v1/students`
-
-  - Get all students. (Admin Only)
-
-- `GET /api/v1/students/:studentId`
-
-  - Get student by ID. (Admin Only)
-
-- `PATCH /api/v1/students/:studentId/update/admin`
-  - Admin update student. (Admin Only)
-
-## Academic Term Routes
-
-- `POST /api/v1/academic-terms`
-
-  - Create an academic term. (Admin Only)
-
-- `GET /api/v1/academic-terms`
-
-  - Get all academic terms.
-
-- `GET /api/v1/academic-terms/:id`
-
-  - Get academic term by ID.
-
-- `PATCH /api/v1/academic-terms/:id`
-
-  - Update academic term by ID.
-
-- `DELETE /api/v1/academic-terms/:id`
-  - Delete academic term by ID. (Admin Only)
-
-## Academic Year Routes
-
-- `GET /api/v1/academic-years`
-
-  - Get all academic years. (Admin Only)
-
-- `POST /api/v1/academic-years`
-
-  - Create an academic year. (Admin Only)
-
-- `GET /api/v1/academic-years/:id`
-
-  - Get academic year by ID.
-
-- `PATCH /api/v1/academic-years/:id`
-
-  - Update academic year by ID. (Admin Only)
-
-- `DELETE /api/v1/academic-years/:id`
-  - Delete academic year by ID. (Admin Only)
-
-## Class Level Routes
-
-- `POST /api/v1/class-levels`
-
-  - Create a class level. (Admin Only)
-
-- `GET /api/v1/class-levels`
-
-  - Get all class levels. (Admin Only)
-
-- `GET /api/v1/class-levels/:id`
-
-  - Get class level by ID.
-
-- `PATCH /api/v1/class-levels/:id`
-
-  - Update class level by ID. (Admin Only)
-
-- `DELETE /api/v1/class-levels/:id`
-  - Delete class level by ID. (Admin Only)
-
-## Exam Results Routes
-
-- `GET /api/v1/exam-results`
-
-  - Get all exam results. (Student Only)
-
-- `GET /api/v1/exam-results/:id/checking`
-
-  - Check exam results by ID. (Student Only)
-
-- `PATCH /api/v1/exam-results/:id/admin-toggle-publish`
-  - Admin toggle exam result publish by ID. (Admin Only)
-
-## Exams Routes
-
-- `POST /api/v1/exams`
-
-  - Create an exam. (Teacher Only)
-
-- `GET /api/v1/exams`
-
-  - Get all exams. (Teacher Only)
-
-- `GET /api/v1/exams/:id`
-
-  - Get exam by ID.
-
-- `PATCH /api/v1/exams/:id`
-  - Update exam by ID. (Teacher Only)
-
-## Program Routes
-
-- `POST /api/v1/programs`
-
-  - Create a program. (Admin Only)
-
-- `GET /api/v1/programs`
-
-  - Get all programs. (Admin Only)
-
-- `GET /api/v1/programs/:id`
-
-  - Get program by ID.
-
-- `PATCH /api/v1/programs/:id`
-
-  - Update program by ID. (Admin Only)
-
-- `DELETE /api/v1/programs/:id`
-  - Delete program by ID. (Admin Only)
-
-## Question Routes
-
-- `POST /api/v1/questions/:examId`
-
-  - Create a question. (Teacher Only)
-
-- `GET /api/v1/questions`
-
-  - Get all questions. (Teacher Only)
-
-- `GET /api/v1/questions/:id`
-
-  - Get question by ID.
-
-- `PATCH /api/v1/questions/:id`
-  - Update question by ID. (Teacher Only)
-
-## Subject Routes
-
-- `POST /api/v1/subjects/:programId`
-
-  - Create a subject. (Teacher Only)
-
-- `GET /api/v1/subjects`
-
-  - Get all subjects. (Teacher Only)
-
-- `GET /api/v1/subjects/:id`
-
-  - Get subject by ID.
-
-- `PATCH /api/v1/subjects/:id`
-
-  - Update subject by ID. (Teacher Only)
-
-- `DELETE /api/v1/subjects/:id`
-  - Delete subject by ID. (Teacher Only)
-
-## Year Group Routes
-
-- `POST /api/v1/year-groups`
-
-  - Create a year group. (Admin Only)
-
-- `GET /api/v1/year-groups`
-
-  - Get all year groups. (Admin Only)
-
-- `GET /api/v1/year-groups/:id`
-
-  - Get year group by ID.
-
-- `PATCH /api/v1/year-groups/:id`
-
-  - Update year group by ID. (Admin Only)
-
-- `DELETE /api/v1/year-groups/:id`
-  - Delete year group by ID. (Admin Only)
+- `DELETE /api/v1/bookings/:id`
+  - Delete boking by ID. (Admin Only)
 
 ### Authentication
 
-- `POST /api/v1/signup`: Sign up and create a new user account.
+- `POST /api/v1/auth/register`: Sign up and create a new user account.
 
   - Request Body:
     ```json
@@ -345,11 +139,10 @@ Once the server is running, interact with the API using tools like [Postman](htt
       "name": "Your Name",
       "email": "your@email.com",
       "password": "yourpassword",
-      "passwordConfirm": "yourpassword"
     }
     ```
 
-- `POST /api/v1/login`: Log in and obtain an authentication token.
+- `POST /api/v1/auth/login`: Log in and obtain an authentication token.
   - Request Body:
     ```json
     {
@@ -357,6 +150,8 @@ Once the server is running, interact with the API using tools like [Postman](htt
       "password": "yourpassword"
     }
     ```
+    
+- `POST /api/v1/auth/logout`: Logout and secure your privacy.
 
 ## Contributing
 
