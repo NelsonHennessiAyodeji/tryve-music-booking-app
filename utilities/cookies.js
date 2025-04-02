@@ -2,6 +2,7 @@ const { createToken } = require("./jwt");
 
 const attachCookiesToResponse = (res, artistToken) => {
   const token = createToken({ payload: artistToken });
+  res.token = token;
 
   const oneDay = 1000 * 60 * 60 * 24; //1millisecond x 60sec x 60min x 24 hr
 

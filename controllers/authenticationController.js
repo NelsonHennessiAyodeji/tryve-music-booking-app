@@ -97,6 +97,7 @@ const login = async (req, res) => {
     Artist: {
       artistName: artist.name,
       artistEmail: artist.email,
+      artistToken: req.signedCookies,
     },
   });
 };
