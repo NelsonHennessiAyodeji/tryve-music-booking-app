@@ -88,6 +88,8 @@ const login = async (req, res) => {
     artistID: artist._id,
   };
 
+  const token = req.signedCookies;
+
   // Attaching the important elements to make up the unique cookie
   attachCookiesToResponse(res, artistToken);
 
@@ -97,7 +99,7 @@ const login = async (req, res) => {
     Artist: {
       artistName: artist.name,
       artistEmail: artist.email,
-      artistToken: req.signedCookies,
+      artistToken: token,
     },
   });
 };
