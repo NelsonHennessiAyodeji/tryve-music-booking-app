@@ -50,7 +50,7 @@ You can test the API using the [Postman collection](https://documenter.getpostma
 
 - **Documentation:**
 
-  - Detailed API documentation available in the [API Documentation](index.html) file.
+  - Detailed API documentation available in the [API Documentation](public/index.html) file.
 
 - **Error Handling:**
 
