@@ -9,7 +9,7 @@ const {
 } = require("../controllers/artistController");
 
 router.get("/", authenticateRouter, getAllArtists);
-router.put("/", authenticateRouter, updateArtist);
+router.put("/updateArtist", authenticateRouter, updateArtist);
 router.patch("/updatePassword", authenticateRouter, updateArtistPassword);
 router.get("/:id", authenticateRouter, getSingleArtist);
 

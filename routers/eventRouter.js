@@ -10,9 +10,9 @@ const {
 } = require("../controllers/eventController");
 
 router.get("/", authenticateRouter, getAllEvents);
-router.post("/", authenticateRouter, createEvent);
+router.post("/createEvent", authenticateRouter, createEvent);
 router.get("/:id", authenticateRouter, getSingleEvent);
-router.patch("/:id", authenticateRouter, updateEvent);
-router.delete("/:id", authenticateRouter, deleteEvent);
+router.patch("/updateEvent/:id", authenticateRouter, updateEvent);
+router.delete("/deleteEvent/:id", authenticateRouter, deleteEvent);
 
 module.exports = router;

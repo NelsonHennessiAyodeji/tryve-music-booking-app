@@ -14,7 +14,7 @@ const compression = require("compression");
 const cookieParser = require("cookie-parser");
 
 // Router Imports
-const baseUrl = "api/v1/tryve-music";
+const baseUrl = "api/v1/";
 const authenticationRouter = require("./routers/authenticationRouter");
 const artistRouter = require("./routers/artistRouter");
 const eventRouter = require("./routers/eventRouter");

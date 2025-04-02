@@ -10,9 +10,9 @@ const {
 } = require("../controllers/bookingController");
 
 router.get("/", authenticateRouter, getAllBookings);
-router.post("/", authenticateRouter, createBooking);
+router.post("/createBooking", authenticateRouter, createBooking);
 router.get("/:id", authenticateRouter, getSingleBooking);
-router.patch("/:id", authenticateRouter, updateBooking);
-router.delete("/:id", authenticateRouter, deleteBooking);
+router.patch("/updateBooking/:id", authenticateRouter, updateBooking);
+router.delete("deleteBooking/:id", authenticateRouter, deleteBooking);
 
 module.exports = router;
