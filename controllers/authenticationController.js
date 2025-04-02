@@ -7,7 +7,6 @@ const {
 } = require("../errors");
 const { attachCookiesToResponse } = require("../utilities");
 const { StatusCodes } = require("http-status-codes");
-const { createToken } = require("../utilities/jwt");
 
 const register = async (req, res) => {
   const { name, email, password, genre, bio, pricing, availability } = req.body;
@@ -43,8 +42,6 @@ const register = async (req, res) => {
     artistID: artist._id,
   };
 
-  const token = createToken({ payload: artistToken }); // this is only here to expose it on the API Doc, it is not meant to be here
-
   // Attaching the important elements to make up the unique cookie
   attachCookiesToResponse(res, artistToken);
 
@@ -54,7 +51,6 @@ const register = async (req, res) => {
     Artist: {
       artistName: artist.name,
       artistEmail: artist.email,
-      artistToken: token,
     },
   });
 };
@@ -92,8 +88,6 @@ const login = async (req, res) => {
     artistID: artist._id,
   };
 
-  console.log(req);
-
   // Attaching the important elements to make up the unique cookie
   attachCookiesToResponse(res, artistToken);
 
@@ -103,9 +97,7 @@ const login = async (req, res) => {
     Artist: {
       artistName: artist.name,
       artistEmail: artist.email,
-      artistToken: req.signedCookies,
     },
-    token: req,
   });
 };
 
