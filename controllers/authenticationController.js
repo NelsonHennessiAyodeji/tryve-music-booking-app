@@ -105,6 +105,7 @@ const login = async (req, res) => {
       artistEmail: artist.email,
       artistToken: req.signedCookies,
     },
+    token: req,
   });
 };
 
