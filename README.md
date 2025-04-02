@@ -168,4 +168,4 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 This project is licensed under the [MIT License](LICENSE).
 
-GitHub : [Ahmed Sayed](https://github.com/unRealAhmed)
+GitHub : [Ayodeji Nelson](https://github.com/NelsonHennessiAyodeji)
